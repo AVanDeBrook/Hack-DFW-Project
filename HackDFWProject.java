@@ -31,22 +31,31 @@ public class HackDFWProject {
         System.out.print("Enter a brightness level to relight to: ");
         String brightenLevel = keyboard.next();
         
+        //System.out.print("Action: ");
+        //String action = keyboard.nextLine();
+        
         
         while (true) {
             
+            Thread.sleep(60000);
             currentTime.setTime();
             
             if (currentTime.getTime().equals(dimTime)) {
                 
                 brightness.setBrightness(dimLevel);
-                break;
-                                
+                System.out.println("Dimmed screen" + dimLevel);
+            
             } else if (currentTime.getTime().equals(brightenTime)) {
                 
                 brightness.setBrightness(brightenLevel);
-                break;
+                System.out.println("Screen brightened to" + brightenLevel);
                 
-            }                                
-        }        
-    }   
-}    
+            }// else if (action.toLowerCase().equals("quit")) {
+                
+               // System.out.println("Quitting");
+               // break;
+                
+            //}                                           
+        }
+    }
+}
