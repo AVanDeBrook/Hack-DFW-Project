@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class HackDFWProject {
             
-    public synchronized static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         
         TimeAndDate currentTime = new TimeAndDate();
         Scanner keyboard = new Scanner(System.in);
