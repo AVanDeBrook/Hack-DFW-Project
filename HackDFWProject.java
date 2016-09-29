@@ -4,12 +4,11 @@
 // Started on 4/16/16
 
 package hackdfw.project;
-
 import java.util.Scanner;
 
 public class HackDFWProject {
             
-    public static void main(String[] args) throws Exception {
+    public synchronized static void main(String[] args) throws Exception {
         
         TimeAndDate currentTime = new TimeAndDate();
         Scanner keyboard = new Scanner(System.in);
@@ -31,31 +30,25 @@ public class HackDFWProject {
         System.out.print("Enter a brightness level to relight to: ");
         String brightenLevel = keyboard.next();
         
-        //System.out.print("Action: ");
-        //String action = keyboard.nextLine();
+        System.out.print("Type quit at any time to close the program.\n");
+        String action = keyboard.nextLine();
         
         
-        while (true) {
+        while(true) {
             
             Thread.sleep(60000);
             currentTime.setTime();
-            
+
             if (currentTime.getTime().equals(dimTime)) {
-                
                 brightness.setBrightness(dimLevel);
                 System.out.println("Dimmed screen" + dimLevel);
-            
             } else if (currentTime.getTime().equals(brightenTime)) {
-                
                 brightness.setBrightness(brightenLevel);
-                System.out.println("Screen brightened to" + brightenLevel);
-                
-            }// else if (action.toLowerCase().equals("quit")) {
-                
-               // System.out.println("Quitting");
-               // break;
-                
-            //}                                           
+                System.out.println("Screen brightened to" + brightenLevel);    
+            } else if (action.toLowerCase().equals("quit")) {
+               System.out.println("Quitting...");
+               break;
+            }
         }
     }
 }
