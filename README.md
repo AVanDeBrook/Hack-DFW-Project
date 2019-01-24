@@ -6,4 +6,4 @@ The project was also a stepping stone for me in learning Java so please excuse a
 
 I do not plan on developing this project actively or much further than its current state.
 
-Contact me if you are interested in the project or want to know more about it.
+Contact me or open an issue if you are interested in the project or want to know more about it.
